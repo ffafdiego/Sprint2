@@ -43,7 +43,6 @@ angular.module( 'ngBoilerplate', [
       if (strCurrency.indexOf('.') != -1) {
           return "$" + strCurrency;
       }
-
       var splitter = "-";
       var oldCurrency = strCurrency.toString();
       var prefix = "$";
@@ -67,8 +66,6 @@ angular.module( 'ngBoilerplate', [
       }
       return prefix + strCurrencyNew.substr(0, strCurrencyNew.length - 1);
     };
-
-
     $scope.dolar = function(usdAmount){
       if(isNaN(Number(usdAmount))) return 'US$0,00';
       if(usdAmount == "0"){return 'US$0,00'};
@@ -169,7 +166,7 @@ function GetDataTarjetas($scope,$http){
     }
   }
   $scope.tarjetaSeleccionada = $scope.tarjetas[0];
-  //LLAMAR SERVICIO DE SALDOS PARA TARJETA 0 y guardarlos en saldosTarjeta
+  //LLAMAR SERVICIO DE SALDOS PARA TARJETA 0 y guardarlos en saldosTarjeta y movimientos para esa tarjeta
     $http.get('dummie.js').
     success(function(data, status, headers, config) {
     console.debug("success");

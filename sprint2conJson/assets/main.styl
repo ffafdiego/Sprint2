@@ -1,0 +1,181 @@
+@css{
+  @font-face {
+      font-family: 'helveticaneuelight';
+      src: url('fonts/helveticaneuelt-webfont.eot');
+      src: url('fonts/helveticaneuelt-webfont.eot?#iefix') format('embedded-opentype'),
+           url('fonts/helveticaneuelt-webfont.woff') format('woff'),
+           url('fonts/helveticaneuelt-webfont.ttf') format('truetype'),
+           url('fonts/helveticaneuelt-webfont.svg#helveticaneuelight') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+  @font-face {
+      font-family: 'helveticaneueitalic';
+      src: url('fonts/helveticaneueit-webfont.eot');
+      src: url('fonts/helveticaneueit-webfont.eot?#iefix') format('embedded-opentype'),
+           url('fonts/helveticaneueit-webfont.woff') format('woff'),
+           url('fonts/helveticaneueit-webfont.ttf') format('truetype'),
+           url('fonts/helveticaneueit-webfont.svg#helveticaneueitalic') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+  @font-face {
+      font-family: 'helveticaneueheavy';
+      src: url('fonts/helveticaneuehv-webfont.eot');
+      src: url('fonts/helveticaneuehv-webfont.eot?#iefix') format('embedded-opentype'),
+           url('fonts/helveticaneuehv-webfont.woff') format('woff'),
+           url('fonts/helveticaneuehv-webfont.ttf') format('truetype'),
+           url('fonts/helveticaneuehv-webfont.svg#helveticaneueheavy') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+  @font-face {
+      font-family: 'helveticaneueregular';
+      src: url('fonts/helveticaneue-webfont.eot');
+      src: url('fonts/helveticaneue-webfont.eot?#iefix') format('embedded-opentype'),
+           url('fonts/helveticaneue-webfont.woff') format('woff'),
+           url('fonts/helveticaneue-webfont.ttf') format('truetype'),
+           url('fonts/helveticaneue-webfont.svg#helveticaneueregular') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+  @font-face {
+      font-family: 'helveticaneuebold';
+      src: url('fonts/helveticaneuebd-webfont.eot');
+      src: url('fonts/helveticaneuebd-webfont.eot?#iefix') format('embedded-opentype'),
+           url('fonts/helveticaneuebd-webfont.woff') format('woff'),
+           url('fonts/helveticaneuebd-webfont.ttf') format('truetype'),
+           url('fonts/helveticaneuebd-webfont.svg#helveticaneuebold') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+}
+
+
+body
+  font-family 'helveticaneuelight'
+
+/*
+
+generales
+
+*/
+
+.clearfix
+  clear both
+  float none
+
+.container
+  max-width 960px!important
+  h2
+    color #003772
+    font-family 'helveticaneuebold'
+
+.breadcrumb
+  background #fff!important
+
+/* header */
+
+header
+  background #022565
+  .container
+    img
+      width 100%
+
+
+
+/* header */
+section.seleccion-tarjeta
+  margin-bottom 20px
+  label
+    margin-right 5px
+    font-size 18px
+  label, .dropdown
+    display inline-block!important
+    vertical-align top!important
+
+section.col-left
+  border-right 1px solid #ddd
+  ul
+    display block
+    width 100%
+    list-style-type none
+    padding 0px
+    li 
+      width 100%
+      padding 0px
+    span
+      float right
+section.saldos
+  .circulo-estado
+    -moz-border-radius 50%
+    -webkit-border-radius 50%
+    border-radius 50%
+    background-color #E1E1E1
+    width 12px
+    height 12px
+    display inline-block
+    margin-right 14px
+section.saldos
+  .circulo-estado-active
+      background-color #003772
+
+.tarjetas-credito
+  margin-top 30px
+  li 
+    background-color #f7f7f7
+    margin-right 8px
+    margin-bottom 0px
+
+    a 
+      color #333333
+      padding 10px 40px
+      border 1px solid #ddd
+  li:last-child
+    margin-right 0
+
+.tarjetas-credito-ver-mas
+  .text-ver-mas
+    width 28%
+    background-color #fff
+    border 1px
+    border solid 1px #CAD5E1
+    -moz-border-radius 4px
+    -webkit-border-radius 4px
+    border-radius 4px
+    padding 2px 7px
+    margin -20px 0 20px 0
+    float right
+
+
+.saldos
+  h3:first-child 
+    margin-top 30px
+  h3
+    margin-top 40px 
+
+.nav-justified
+  border-bottom solid 1px #000
+    li
+      background-color: #f7f7f7!important;
+      margin-right: 1%!important;
+      width: 23%!important;
+      display: inline-block!important;
+
+      li:last-child
+        margin-right0!important
+.carousel-control
+  display none!important
+.carousel-indicators 
+  bottom -10px!important
+  li
+    background #e1e1e1!important
+  .active
+    background #022565!important
+
+
+
+.cupo-nacional 
+  .text-success
+    color #66AC00
+

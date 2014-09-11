@@ -1,0 +1,708 @@
+@font-face {
+    font-family: 'helveticaneuelight';
+    src: url('fonts/helveticaneuelt-webfont.eot');
+    src: url('fonts/helveticaneuelt-webfont.eot?#iefix') format('embedded-opentype'),
+url('fonts/helveticaneuelt-webfont.woff') format('woff'),
+url('fonts/helveticaneuelt-webfont.ttf') format('truetype'),
+url('fonts/helveticaneuelt-webfont.svg#helveticaneuelight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'helveticaneueitalic';
+    src: url('fonts/helveticaneueit-webfont.eot');
+    src: url('fonts/helveticaneueit-webfont.eot?#iefix') format('embedded-opentype'),
+url('fonts/helveticaneueit-webfont.woff') format('woff'),
+url('fonts/helveticaneueit-webfont.ttf') format('truetype'),
+url('fonts/helveticaneueit-webfont.svg#helveticaneueitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'helveticaneueheavy';
+    src: url('fonts/helveticaneuehv-webfont.eot');
+    src: url('fonts/helveticaneuehv-webfont.eot?#iefix') format('embedded-opentype'),
+url('fonts/helveticaneuehv-webfont.woff') format('woff'),
+url('fonts/helveticaneuehv-webfont.ttf') format('truetype'),
+url('fonts/helveticaneuehv-webfont.svg#helveticaneueheavy') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'helveticaneueregular';
+    src: url('fonts/helveticaneue-webfont.eot');
+    src: url('fonts/helveticaneue-webfont.eot?#iefix') format('embedded-opentype'),
+url('fonts/helveticaneue-webfont.woff') format('woff'),
+url('fonts/helveticaneue-webfont.ttf') format('truetype'),
+url('fonts/helveticaneue-webfont.svg#helveticaneueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'helveticaneuebold';
+    src: url('fonts/helveticaneuebd-webfont.eot');
+    src: url('fonts/helveticaneuebd-webfont.eot?#iefix') format('embedded-opentype'),
+url('fonts/helveticaneuebd-webfont.woff') format('woff'),
+url('fonts/helveticaneuebd-webfont.ttf') format('truetype'),
+url('fonts/helveticaneuebd-webfont.svg#helveticaneuebold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+  font-family: 'helveticaneuelight';
+}
+
+
+
+/* ------------------ GENERALES ------------------*/
+
+.clearfix {
+  clear: both;
+  float: none;
+}
+
+
+/*Breadcumbs*/
+.row .bread-no-bg {
+  background-color:#fff;
+}
+
+
+
+
+
+
+/* ------------------FORMATOS HEADER BASE ------------------*/
+
+header {}
+
+
+/*BARRA TOP */
+.header-top ,
+.header-middle{
+  background-color:#012464;
+   
+}
+
+.header-top > .row {
+  border-top: solid 1px #324f82;
+  margin-top: 4px;
+}
+
+.barra-top {
+  position: relative;
+  margin-top: -1px;
+}
+
+  .barra-top .top-link {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    display: block;
+  }
+
+    .top-link img {
+      vertical-align: middle;
+      margin-right: 3px;
+    }
+
+    .top-link img:nth-of-type(2){
+      margin-right: 0;
+    }
+
+.barra-top .col-md-2,
+.barra-top .col-md-3 {
+  text-align: center;
+  padding-left: 13px;
+  padding-right: 13px;
+}
+
+.barra-top .col-md-5 {
+  border-right: none;
+  text-align: right;
+}
+
+  .barra-top .col-md-5 p{
+    padding-bottom: 1px;
+    margin-bottom: 1px;
+  }
+
+.barra-top > .col-md-2:nth-of-type(1):before {
+  content: '';
+  position: absolute;
+  width: 29px;
+  height: 46px;
+  left: -29px;
+  top: -4px;
+}
+
+.barra-top > .col-md-5:before {
+  content: '';
+  position: absolute;
+  width: 29px;
+  height: 46px;
+  right: -13px;
+  top: -3px;
+}
+
+
+/*LOGO HEADER*/
+
+
+.header-middle .logo-header {
+  display: block;
+}
+
+  .header-middle .logo-header h1 {
+    text-indent: -99999999px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    margin-top: 10px;
+    
+  }
+
+
+/*LABEL BANCA*/
+
+.header-middle .label-banca {
+  width: 150px;
+  height: 37px;
+  padding-top: 7px;
+  display: block;
+  position: absolute;
+  top: 73px;
+}
+
+
+
+/*CAJA USUARIO*/
+
+.header-middle .caja-usuario ul li:first-child {
+  width: auto;
+  min-width: 60%;
+  max-width: 60%;
+}
+
+  .header-middle .caja-usuario ul li {
+    width: 18%;
+    max-width: 100px;
+  }
+
+.header-middle .notificaciones {
+  background: url('../assets/img/ico-email-md.png') no-repeat bottom left;
+  width: 38px;
+  height: 30px;
+  margin: 11px 7px 0 12px ;
+  display: block;
+  position: relative;
+  }
+
+  .header-middle .cantidad-noticifaciones {
+    width: 22px;
+    height: 22px;
+    background-color: #ef6001;
+    
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 1px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+  }
+
+
+  .header-middle .notificaciones:hover .cantidad-noticifaciones {
+    background-color: #fff;
+    color: #ef6001;
+  } 
+
+
+.header-middle .salir-cuenta {
+  color: #fff;
+  font-size: 14px;
+  display: block;
+  margin: 24px auto 0;
+  text-align: center;
+}
+
+.header-middle .datos-usuario {
+  width: 87%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+/*------------------FORMATOS HEADER BANCO DE CHILE  ------------------*/
+
+#bch .header-top ,
+#bch .header-middle{
+  background-color:#012464;
+   
+}
+
+
+/*LABEL BANCA*/
+
+#bch .label-banca {
+  background-color: #194b80;
+  border: solid 1px #2f5d8c;
+  border-bottom: none;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+
+  -moz-border-radius-topleft: 3px;
+  -webkit-border-top-left-radius: 3px;
+  border-top-left-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -webkit-border-top-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+
+#bch .logo-header h1 {
+  background-image: url('../assets/img/logo-banco-chile.png');
+}
+
+
+/* BOTONERA TOP*/
+
+#bch .header-botonera > .row {
+  background-color: #f7f7f7;
+}
+
+#bch .barra-top {
+  background-color: #002464;
+}
+
+  #bch .barra-top a,
+  #bch .barra-top {
+    color: #fff;
+  }
+
+  #bch .barra-top .col-md-2,
+  #bch .barra-top .col-md-3,
+  #bch .barra-top .col-md-5
+       {
+    border-right: solid 1px #324f82;
+    border-bottom: solid 1px #324f82;
+  }
+
+  #bch .barra-top > .col-md-2:nth-of-type(1):before {
+    background: url('../img/line-top-left.jpg') no-repeat;
+  }
+
+  #bch  .barra-top > .col-md-5:before {
+    background: url('../img/line-top-right.jpg') no-repeat;
+  }
+
+
+
+
+/*CAJA USUARIO*/
+
+#bch .caja-usuario {
+  height: 63px;
+  margin: 25px 0 22px; /*borrar*/
+  float: right;
+  width: auto;
+  min-width: 390px;
+
+  border: solid 1px #26457b;
+  -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+  #bch .caja-usuario ul li {
+    border-right: solid 1px #26457b;
+    display: inline-block;
+    vertical-align: top;
+    height: 62px;
+  }
+
+  #bch .caja-usuario ul li:last-child {
+    border-right: none;
+  }
+
+#bch .container-user {
+  padding: 9px 6px 0px 15px;
+}
+
+  #bch .container-user img {
+    margin-right: 7px;
+  }
+
+  #bch .container-user img,
+  #bch .container-user .datos-usuario {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+#bch .datos-usuario h4  {
+  margin: 0px 0px 2px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: normal;
+}
+
+  #bch .datos-usuario p  {
+    margin:-3px 0 0;
+    font-size: 12px;
+    color: #fff;
+  }
+
+
+/*MEDIA QUERIES TABLET*/
+
+@media (max-width: 992px) {
+
+  .barra-top img {
+      display: none;
+    }
+
+    .header-middle .logo-header h1 {
+      width: 100%;
+    height: auto;
+    background-size: 100%;
+    margin-top: 20px;
+    }
+
+}
+
+
+
+/* NAV BAR BCH */
+
+.header-botonera .col-md-12 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#home{
+  float:left;
+  background-color:#EBEBEB;
+  width: 46px;
+  line-height:43px;
+  text-align:center;
+}
+
+#bch .btn-nav {
+  color:#4A4A4A;
+  font-size:16px;
+  border-right:solid 1px #2E3424;
+  line-height:1.8;
+  border-radius: 0px;
+  background-color:#F7F7F7;
+  margin-left:7px;
+  }
+
+#bch .ico-nav {
+  background-image:url('../img/ico-nav.png');
+  background-color: transparent;
+  width:14px;
+  height:8px;
+  margin-left:5px;
+  line-height:1.8;
+  display: inline-block;
+  }
+
+
+
+
+
+
+
+
+
+/*--------------ESTILOS SALDOS TARJETAS DE CREDITO-------------------*/
+
+
+
+/*TITULOS*/
+
+.primer-titulo h2 {
+  color: #003772;
+  font-family: 'helveticaneuebold';
+  margin-top: 0;
+}
+
+
+
+/*SELECCION DE TARJETA*/
+
+.seleccion-tarjeta {
+  margin-bottom: 25px;
+}
+.seleccion-tarjeta label {
+  margin-right: 10px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.seleccion-tarjeta label,
+.seleccion-tarjeta .dropdown {
+  display: inline-block ;
+  vertical-align: middle;
+}
+
+
+
+
+/*CONTENEDOR DE TABS SALDOS*/
+
+.contenedor-tabs-saldos .nav > li {
+  border-right: solid 1px #ececec;
+  cursor: pointer;
+}
+
+.contenedor-tabs-saldos .nav > li > a {
+  background-color: #f7f7f7;
+  color: #000;
+}
+
+
+
+
+
+/*TAB SALDOS NACIONAL E INTERNACIONAL*/
+
+.contenedor-tabs-saldos .col-lg-5,
+.contenedor-tabs-saldos .col-lg-7 {
+  margin-top: 40px;
+  border-top: solid 1px #ddd;
+}
+
+.contenedor-tabs-saldos .col-lg-5 {
+  border-right: 1px solid #ddd;
+}
+
+
+.listado-de-saldos {
+  display: block;
+  width: 100%;
+  list-style-type: none;
+  padding: 0px;
+}
+  .listado-de-saldos li {
+    width: 100%;
+    padding: 0px;
+  }
+
+  .listado-de-saldos span {
+    float: right;
+  }
+
+.contenedor-tabs-saldos .circulo-estado,
+.contenedor-tabs-saldos .circulo-estado-active {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #e1e1e1;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  margin-right: 14px;
+}
+
+  .contenedor-tabs-saldos .circulo-estado-active {
+    background-color: #003772;
+  }
+
+
+
+
+
+/*CONTENEDORES NACIONAL E INTERNACIONAL*/
+
+.cupo-internacional ul li,
+.cupo-nacional ul li {
+  font-size: 15px;
+}
+
+.cupo-nacional h3,
+.cupo-internacional h3 {
+  margin-bottom: 20px;
+}
+
+.cupo-internacional h3 {
+  margin-top: 50px;
+}
+
+
+/*BOTON VER MAS*/
+
+.tarjetas-credito-ver-mas {
+  margin-top: 30px;
+}
+
+.tarjetas-credito-ver-mas .text-ver-mas {
+    width: 28%;
+    background-color: #fff;
+    border: solid 1px #cad5e1;
+    cursor: pointer;
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+
+    padding: 2px 7px;
+    margin: -20px 0 20px 0;
+    float: right;
+   
+    text-align: center;
+    font-size: 12px;
+    color: #003875;
+}
+
+
+
+
+
+
+
+
+/*CAROUSEL RIGHT*/
+
+.carousel-saldos-tarjetas .carousel-control {
+  display: none;
+}
+.carousel-saldos-tarjetas .carousel-indicators {
+  bottom: -10px;
+}
+.carousel-saldos-tarjetas .carousel-indicators li {
+  background: #e1e1e1;
+  width: 15px;
+  height: 15px;
+  border: none;
+  margin-right: 13px;
+}
+  .carousel-saldos-tarjetas .carousel-indicators li:last-child {
+    margin-right: 0;
+  }
+  
+.carousel-saldos-tarjetas .carousel-indicators .active {
+  background:;
+}
+
+
+
+.cupo-nacional .text-success,
+.cupo-internacional .text-success{
+  color: #66AC00;
+}
+
+
+
+.cupo-nacional  .listado-de-saldos li:nth-child(4) h4,
+.cupo-internacional .listado-de-saldos li:nth-child(4) h4 {
+  margin-top: 20px;
+}
+
+/*movimientos no facturados*/
+
+.movimientos-titulo {
+  margin-top: 50px;
+  margin-bottom: 53px;
+  color: #003772;
+}
+
+.movimientos-no-facturados {
+  text-align: center;
+  margin-top: 29px;
+  border-bottom: none !important;
+}
+.movimientos-no-facturados > thead > tr > th {
+  font-weight: normal;
+  text-align: center;
+  background-color: #003772;
+  color: #fff;
+  vertical-align: bottom;
+  border-bottom: none!important; 
+
+  border-top: none!important; 
+  height: 40px;
+}
+
+.movimientos-no-facturados  > tbody > tr > td {
+  border-top: none!important;
+  height: 40px;
+  padding-top: 8px !important;
+}
+
+.movimientos-no-facturados .mes-movimiento {
+  text-align: left;
+  padding: 0px 0px 0px 32px !important;
+  background-color: #CCD7E3 !important;
+  height: 20px;
+}
+
+.movimientos-no-facturados > li.active > a {
+  border: 0px !important;
+  padding-left: 0;
+  border-right: 1px solid #CAD5E1 !important;
+  border-radius: 0 0 0 0 !important;
+}
+.compaginacion .numero-pagina{
+    float: inherit !important;
+}
+.numero-pagina{
+  margin: 0 5px 0 5px;
+}
+
+.flechas .btn{
+  border-radius:inherit;
+  margin-left: 23px !important;
+  background-color: #F8F8F8;
+}
+.btn-toolbar {
+  margin-left: 6px!important;
+}
+
+.tabla-movimientos-no-facturados .nav-tabs{
+  border-bottom: none!important;
+}
+
+.tabla-movimientos-no-facturados .nav-tabs > li.active > a, 
+.tabla-movimientos-no-facturados .nav-tabs > li > a,
+.tabla-movimientos-no-facturados .nav-tabs > li.active > a:focus{
+  border:none!important;
+  padding-left: 0;
+  border-right: 1px solid #CAD5E1!important;
+  border-radius: inherit;
+}
+
+.tabla-movimientos-no-facturados .nav-tabs > li.active > a:hover{
+  background-color: none!important;
+}
+.tabla-movimientos-no-facturados .nav-tabs > li:nth-child(2) > a {
+  border-right: none!important;
+  padding-left: 20px;
+}

@@ -1,0 +1,15 @@
+{
+  "numeroTarjeta":"4227771431319831",	
+  "cupoComprasNacional":"12312",
+  "cupoComprasInternacional":"11412000",
+  "cupoAvancesNacional":"475000",
+  "cupoAvancesInternacional":"1000.05",
+  "deudaComprasNacional":"0",
+  "deudaComprasInternacional":"0",
+  "deudaAvancesNacional":"0",
+  "deudaAvancesInternacional":"0",
+  "disponibleComprasNacional":"500000",
+  "disponibleComprasInternacional":"1000",
+  "disponibleAvancesNacional":"475000",
+  "disponiblesAvancesInternacional":"1000"
+}

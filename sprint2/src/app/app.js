@@ -159,6 +159,19 @@ function GetDataTarjetas($scope,$http){
   $scope.tarjetas = data;
   console.log($scope.tarjetas);
 
+  /// LLAMADA  A SERVICIO REST
+//  var res = $http.get('/service/consultasaldos/home?numeroTarjeta=4152822090000204&submit=Ingresar');        
+  //var res = $http.get('/service/consultasaldos/home?numeroTarjeta=4152822090000204&submit=Ingresar');        
+
+
+  var res= $http.get('service/tarjeta/lista?numeroTarjeta=0004966701190000247&opcionFiltro=F&filler=000&submit=Ingresar');
+
+        res.success(function(data, status, headers, config) {
+
+            console.log(data);
+              alert("1");
+        });
+
   //FILTRAR TARJETAS ACTIVAS
   for(var i = 0 ; i < $scope.tarjetas.length; i++){
     if($scope.tarjetas[i].estado != "Vigente o Activo") {

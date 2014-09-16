@@ -28,6 +28,14 @@ angular.module( 'ngBoilerplate', [
     return titularidad+" "+tarjeta.marca+" "+enmascaramientoTarjeta;
   };
 
+  $scope.formatoTarjetaTablaMovimientos = function(tarjeta){
+    if(tarjeta == null ) return "-";
+    enmascaramientoTarjeta = tarjeta.numProducto.substring(tarjeta.numProducto.length-4, tarjeta.numProducto.length);
+    if(tarjeta.titularidad=="T") titularidad = "TIT";
+    else titularidad = "ADI";
+    return titularidad+"-"+enmascaramientoTarjeta;
+  };
+
   $scope.pesos = function(strCurrency){
       //pesos currency has decimal then round it to nearest value.
       numCurrency = Number(strCurrency);      
@@ -108,7 +116,29 @@ angular.module( 'ngBoilerplate', [
         if (modifiedAmt.indexOf(",00") > -1) return modifiedAmt;
         else{return modifiedAmt+',00'}        
       }
-    }
+    };
+    $scope.formatoHora = function(hora){
+      formatoHora = hora.substring(hora.length-3, "");
+        return formatoHora;
+    };
+    $scope.formatoFechaAño = function(fecha){
+        agno = fecha.substring(fecha.length-10, fecha.length-6);
+        return agno;
+      };
+
+    $scope.formatoFechaDia = function(fecha){
+        dia = fecha.substring(fecha.length-2, fecha.length);
+        fecha = dia + " de ";
+        return fecha;
+      };
+
+    $scope.formatoFechaMes = function(fecha){
+      var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', ' Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+      mes = fecha.substring(fecha.length-5, fecha.length-3);
+      mes = parseInt(mes);
+      mesf = meses[mes - 1];      
+      return mesf;
+    };
 });
 
 //// Tabs ////
@@ -152,49 +182,100 @@ function CarouselDemoCtrl($scope) {
   }
 }
 
+//  var res = $http.get('/service/tarjeta/consultaProd?rutCliente=8024544-0&productos=TNM&submit2=Ingresar');        
+//    $http.get('/service/tarjeta/consultaSaldo?numeroTarjeta='+$scope.tarjetaSeleccionada.numProducto+'&secuenciaTarjeta=1&filler02=000&rutCliente=8024544-0&submit2=Ingresar').
+
 function GetDataTarjetas($scope,$http){
+  var rut  = "5886090-5";
   $http.get('dummieInfoTarjetas.js').
   success(function(data, status, headers, config) {
-  console.debug("success");
-  $scope.tarjetas = data;
-  console.log($scope.tarjetas);
-
-  //FILTRAR TARJETAS ACTIVAS
-  for(var i = 0 ; i < $scope.tarjetas.length; i++){
-    if($scope.tarjetas[i].estado != "Vigente o Activo") {
-      $scope.tarjetas.splice(i--, 1);
-    }
-  }
-  $scope.tarjetaSeleccionada = $scope.tarjetas[0];
+    console.debug("success");
+    $scope.tarjetas = data.producto;
+    //ORDEN DE TARJETAS
+    $scope.tarjetas.sort(function(a, b){
+      var tarjeta1=$scope.formatoTarjeta(a), tarjeta2=$scope.formatoTarjeta(b);
+      if(tarjeta1.substring(0,3) == "TIT") return 0;
+      if(tarjeta2.substring(0,3) == "TIT") return 1;
+      if (tarjeta1 < tarjeta2) //sort string ascending
+        return -1 
+      if (tarjeta1 > tarjeta2)
+        return 1
+      return 0; //default return value (no sorting)
+    })
+    $scope.tarjetaSeleccionada = $scope.tarjetas[0];
   //LLAMAR SERVICIO DE SALDOS PARA TARJETA 0 y guardarlos en saldosTarjeta y movimientos para esa tarjeta
     $http.get('dummie.js').
     success(function(data, status, headers, config) {
-    console.debug("success");
-    $scope.saldosTarjeta = data;
-    }).
+      console.debug("success");
+      $scope.saldosTarjeta = data;
+      }).
     error(function(data, status, headers, config) {
     });
-///////////////////////////////////////////////////    
+
+    // LLAMA SERVICIOS MOVIMIENTOS
+
+    $http.get('dummieTransacciones.js').
+      success(function(data, status, headers, config) {
+      var transaccion = data;
+      if (transaccion.transacciones == null){
+        console.log("no hay nada");
+      }
+      $scope.movimientosNacionales = [];
+      $scope.movimientosInternacionales = [];
+      var fecha ;
+      $scope.mesf;
+      var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', ' Agosto', 'Septiembre', 'Octubre', 'Noviembre', ' Diciembre'];
+      for(var i = 0 ; i < transaccion.transacciones.length; i++){
+        if(transaccion.transacciones[i].origenTransaccion == "NAC") {
+          $scope.movimientosNacionales.push(transaccion.transacciones[i]);
+        }
+        else{
+          $scope.movimientosInternacionales.push(transaccion.transacciones[i]);
+        }     
+      }
+    }). 
+    error(function(data, status, headers, config) {
+    });
+
+///////////////////////////////////////////////////
   }).
   error(function(data, status, headers, config) {
   });
+  $scope.mostrarDatosTarjetaSeleccionada = function($event,tarjetaSeleccionada) {
+    $scope.tarjetaSeleccionada = tarjetaSeleccionada;
+    $http.get('/service/tarjeta/consultaSaldo?numeroTarjeta='+$scope.tarjetaSeleccionada.numProducto+'&secuenciaTarjeta=1&filler02=000&rutCliente='+rut+'&submit2=Ingresar').
+    success(function(data, status, headers, config) {
+      console.debug("success");
+      $scope.saldosTarjeta = data;
+      }).
+    error(function(data, status, headers, config) {
+    });
 
-  $scope.mostrarDatosTarjetaSeleccionada = function($event,tarjetaSeleccionada,$http) {
-    console.log(tarjetaSeleccionada);
-    $scope.tarjetaSeleccionada = tarjetaSeleccionada;   
-    //LLAMAR SERVICIOS oara VER SALDOS PARA tarjetaSeleccionada
-    if(tarjetaSeleccionada.marca[0] == "A"){
-    $scope.saldosTarjeta.cupoAvancesInternacional = "12312";
-    }
-    else{
-    $scope.saldosTarjeta.cupoAvancesInternacional = "45667757";
-    }
-    //////////////////////////////////////////////////
-    console.log($scope.saldosTarjeta);
-    console.log($scope.tarjetaSeleccionada);
+    $http.get('/service/tarjeta/lista?numeroTarjeta='+$scope.tarjetaSeleccionada.numProducto+'&opcionFiltro=F&filler=000&rutCliente='+rut+'&submit=Ingresar').
+      success(function(data, status, headers, config) {
+      var transaccion = data;
+      if (transaccion.transacciones == null){
+      }
+      $scope.movimientosNacionales = [];
+      $scope.movimientosInternacionales = [];
+      var fecha ;
+      $scope.mesf;
+      var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', ' Agosto', 'Septiembre', 'Octubre', 'Noviembre', ' Diciembre'];
+      for(var i = 0 ; i < transaccion.transacciones.length; i++){
+        if(transaccion.transacciones[i].origenTransaccion == "NAC") {
+          $scope.movimientosNacionales.push(transaccion.transacciones[i]);
+        }
+        else{
+          $scope.movimientosInternacionales.push(transaccion.transacciones[i]);
+        }     
+      }
+    }). 
+    error(function(data, status, headers, config) {
+    });
 
-  } 
-}
+  }
+} 
+
 
 
 

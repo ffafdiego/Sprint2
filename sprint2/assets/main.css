@@ -473,8 +473,27 @@ header {}
   vertical-align: middle;
 }
 
+.dropdown .seleccion-tarjetas{
+  text-align: left;
+}
 
+.dropdown .dropdown-menu{
+  width: 270px;
+}
 
+.btn-default{
+  width:270px;
+}
+
+.btn{
+  text-align: left!important;
+}
+
+.btn .caret{
+  float: right;
+  margin-top: 10px;
+  padding: 4px 0 4px 0;
+}
 
 /*CONTENEDOR DE TABS SALDOS*/
 
@@ -673,17 +692,20 @@ header {}
 .compaginacion .numero-pagina{
     float: inherit !important;
 }
-.numero-pagina{
-  margin: 0 5px 0 5px;
-}
 
+.btn-toolbar .numero-pagina .numeracion{
+  width: 30px!important;
+  background-color: #fff;
+  border: 1px solid #C3C3C3;
+}
 .flechas .btn{
   border-radius:inherit;
   margin-left: 23px !important;
   background-color: #F8F8F8;
+
 }
 .btn-toolbar {
-  margin-left: 6px!important;
+   margin-left: 6px!important;
 }
 
 .tabla-movimientos-no-facturados .nav-tabs{
@@ -706,3 +728,40 @@ header {}
   border-right: none!important;
   padding-left: 20px;
 }
+
+
+/*TABLA MOVIMIENTOS NO FACTURADOS SIN MOVIMIENTOS*/
+.movimientos-no-facturados .mensaje-no-movimientos-facturados {
+  text-align: center!important;
+  font-size: 18px;
+  padding: 20px!important;
+
+}
+
+/*MENSAJE DE ALERTA NO CONEXION CON NEXUS*/
+.alert-warning {
+  color:#4C4C4C!important;
+  border-color: #D5D5D5!important;
+  margin-top: 40px;
+  background-color:#FAD3BA!important;
+  display: inline-block;
+  padding: 20px;
+  width: 100%;
+}
+
+.alert-warning img {
+  font-size:-webkit-xxx-large;
+  float: left;
+  margin: -2px 0 9px 20px;
+  height: 40px;
+  width: 40px;
+}
+
+.alert-warning h4,
+.alert-warning p{
+  margin-left:100px!important;
+  margin-bottom: -2px;
+  font-size: 18px;
+}
+
+
